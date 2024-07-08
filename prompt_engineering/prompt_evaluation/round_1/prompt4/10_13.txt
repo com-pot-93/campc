@@ -1,0 +1,6 @@
+{
+    "change_0": "flowchart LR\n0:startevent:((startevent))-->1:task:(INQ transmits the transaction data request)\n1:task:-->2:task:(IP checks the request)\n2:task:-->2.5:task:(dummy task 1)\n2.5:task:-->3:task:(IP answers the question)\n3:task:-->4:endevent:((endevent))",
+    "change_1": "flowchart LR\n0:startevent:((startevent))-->1:task:(INQ transmits the transaction data request)\n1:task:-->2:task:(IP checks the request)\n2:task:-->3:task:(IP answers the question)\n3:task:-->4:endevent:((endevent))",
+    "change_2": "flowchart LR\n0:startevent:((startevent))-->1:task:(INQ transmits the transaction data request)\n1:task:-->2:task:(IP checks the request)\n2:task:-->3:task:(IP answers the question)\n2:task:-->5:task:(dummy task 2)\n3:task:-->4:endevent:((endevent))\n5:task:-->4:endevent:((endevent))",
+    "change_3": "flowchart LR\n0:startevent:((startevent))-->1:task:(INQ transmits the transaction data request)\n0:startevent:((startevent))-->6:task:(dummy task 3)\n1:task:-->2:task:(IP checks the request)\n2:task:-->3:task:(IP answers the question)\n2:task:-->5:task:(dummy task 2)\n3:task:-->4:endevent:((endevent))\n5:task:-->4:endevent:((endevent))\n6:task:-->4:endevent:((endevent))"
+}

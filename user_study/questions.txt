@@ -1,0 +1,35 @@
+Demographic questions:
+1. Please rate your programming experience with respect to the following 5-point scale.
+2. Years of programming experience.
+3. Please rate your modelling skills with graphical modeling languages with respect to the following 5-point scale.
+4. Years of modelling experience.
+5. Which of graphical modeling languages are you familiar with (e.g., UML, ER, etc.)?
+
+User Satisfaction:
+1.  Please rate your overall satisfaction with the final model according to the following 5-point scale.
+2.  Do you consider the final model as correct (i.e., consistent with the provided process description)?
+3.  Do you consider the final model as complete (i.e., are all the tasks from the provided process description included in the model)?
+4.  Do you consider the final model to be structurally correct (i.e., consistent with the BPMN 2.0 standard)?
+5.  Do you consider the labeling of the final model appropriate (i.e., tasks, gateways, and events labels are easy to understand)?
+6.  Do you consider the layout of the final model appropriate (i.e., visually appealing)?
+7.  Please rate your satisfaction with the selected visual representation of the BPMN model according to the following 5-point scale.
+8.  Do you find the selected BPMN elements (start, end events, tasks, exclusive and parallel gateways, and sequence flow) to be sufficient for your modeling needs?
+9.  Have you noticed any halucinations, i.e., extra modelling elements provided by chat that are not included in the process description?
+10. Do you have any general comments or suggestions?
+
+
+Scales:
+  Expirieince:
+    (vl) no experience,
+    (l)  learned in class or from book,
+    (m)  used on a class project,
+    (h)  used on one project in industry,
+    (vh) used on multiple projects in industry.
+
+  Satisfaction:
+    (vl) not satisfied         /very low,
+    (l)  slightly satisfied    /low,
+    (m)  moderately satisfied  /moderate,
+    (h)  very satisfied        /high,
+    (vh) extremely satisfied   /very high.
+

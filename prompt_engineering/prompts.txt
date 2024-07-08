@@ -1,0 +1,61 @@
+Prompt for t2m transformation:
+  Process description: <process_description>. <rules>. Considering provided process description and a set of custom rules create a valid mermaid.js graph.
+
+Prompts for model refinement:
+  Prompt A (roles: 'user'):
+    Consider following process description: <process_description>.
+    Update this model: <refinement_task>.
+    Return only valid mermaid.js code with no additional text.
+  Prompt B (roles: 'user'):
+    Consider following mermaid.js process model: <process_model>.
+    Update this model: <refinement_task>.
+    Return only valid mermaid.js code with no additional text.
+  Prompt C (roles: 'user'):
+    Consider following process description: <process_description>.
+    Consider following mermaid.js process model: <process_model>.
+    Update this model: <refinement_task>.
+    Return only valid mermaid.js code with no additional text.
+  Prompt D (roles: 'user' and 'system'):
+    - 'user':
+        Consider following mermaid.js process model: <process_model>.
+        Update this model: <refinement_task>.
+    - 'system': <system_message>
+  Prompt E (roles: 'user' and 'system'):
+    - 'user':
+      Consider following process description: <process_description>.
+      Consider following mermaid.js process model: <process_model>.
+      Update this model: <refinement_task>.
+    - 'system': <system_message>
+
+<process_description>: textual description of the process
+<process_model>:       process model depictied with mermaid.js
+<refinement_task>:     textual description of changes that should be performed in the model
+<rules>:               rules defining the output format of the mermaid.js model
+<system_message>:      <rules> + <return>
+
+<rules>:
+  Rules for mermaid js flowcharts:
+  The graph must use the LR (Left to Right) direction.
+  Each mermaid js node must have the following structure:
+  id:type:shape and text
+      id - it is a unique identifier. Integer from 1 to n. Each node has a unique identifier
+      type - defines the type of the element regarding to BPMN 2.0 notation.
+          possible types are: start event, end event, task, exclusive gateway and parallel gateway.
+          Based on the type of the node following shapes and texts are to be used:
+          startevent: ((startevent))     i.e., id:startevent:((startevent))
+          endevent: ((endevent))	     i.e., id:endevent:((endevent))
+          task: (task label)             i.e., id:task:(task label)
+          exclusivegateway: {x}          i.e., id:exclusivegateway:{x}
+          parallelgateway: {AND}         i.e., id:exclusivegateway:{AND}
+
+  All nodes that have occurred more than once should have following structure: id:type: (i.e., 2:task: ) by futher occurrence.
+  It is strictly prohibited to use only id (i.e. 2) as a reference.
+
+      all elements are connected with each other with the help of the direction.
+          direction: -->
+      if there are some conditions or annotations it is necessary to use text on links (i.e., edge labels)
+          edge label: |condition or annotation|
+      edge label is always located between 2 nodes: id:exclusivegateway:{x} --> |condition or annotation|id:task:(task label)
+
+<return>:
+  Return only valid mermaid.js code with no additional text.
